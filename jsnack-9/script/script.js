@@ -17,16 +17,18 @@ const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 console.log(numbers);
 // variabile in cui salvare la somma dei numeri;
 let sum = 0;
-
 // ciclo 'for'per sommare gli elementi dell'array
 
 for(let i = 0; i < numbers.length; i++) {
     sum += numbers[i];
 }
 
+// calcolare la media degli elementi dell'array
+
+let average = sum / numbers.length;
+
 console.log(`La somma degli elementi dell'array già esistente è: ${sum}.`); 
-
-
+console.log(`La media degli elementi dell'array gia esistente è: ${average}`)
 /*----------------------------------------*\
 | Versione con un array creato da funzione |
 \*----------------------------------------*/
@@ -58,5 +60,10 @@ for(let i = 0; i < numbs.length; i++) {
     sum2 += numbs[i];
 }
 
+// calcolare la media degli elementi dell'array creato
+
+let average2 = sum2 / numbs.length;
+
 // Il risultato viene stamapato a console;
-console.log(`La somma dell'array creato con una funzione è: ${sum2}.`);
+console.log(`La somma degli elementi dell'array creato con una funzione è: ${sum2}.`);
+console.log(`La media degli elementi dell'array creato con una funzione è: ${average2}`);
