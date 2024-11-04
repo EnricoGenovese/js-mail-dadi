@@ -16,15 +16,30 @@ const mailAddress = [
     "topolino@gmail.com",
     "paperino@gmail.com",
     "quiquoqua@gmail.com"
-]
+];
 
 // si chiede all'utente di inserire il proprio indirizzo e-mail
-const userEMail = prompt("Inserisci il tuo indirizzo e-mail")
+const userEMail = prompt("Inserisci il tuo indirizzo e-mail");
 
 // si imposta una variabile 'flag' per permettere al loop di interrompesi quando si trova una corrispondenza
 let welcome = false;
 
+for(let i = 0; !welcome && i < mailAddress.length; i++) {
 
+    // si chiede al loop di cercare una corrispondenza tra la mail inserita dall'utente
+    // e tutte quelle presenti nell'array. Se trovata, il loop si interrompe e imposta il
+    // valore di "welcome" come vero.
+    if(userEMail === mailAddress[i]) {
+        welcome = true;
+    } 
+}
+// Il valore "true" di "welcome" permette di stampare in console il messaggio di benvento
+if(welcome) {
+    console.log("Benvenuto.")
+    // altrimenti viene stamapato in console un messaggio di 'errore' 
+} else {
+    console.log("La mail inserita non è corretta.")
+    }
 
 
 /* Gioco dei dadi
