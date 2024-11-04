@@ -57,7 +57,7 @@ function getRandInt(min, max) {
     max = Math.floor(max);  // arrotonda per difetto l'intero causale (es. 1.95 --> 1)
     
     // Il '+ 1' aggiunto alla sottrazione di min a max permette di avere dei risultati che
-    //  possono superare il massimo indicato senza superare il punto dell'intero successivo (massimo 5,999...)
+    //  possono superare il massimo indicato senza superare il punto dell'intero successivo (massimo 6,999...)
     //  e quindi risultare, approssimati per difetto, anche nel valore stesso del valore massimo.    
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }  
