@@ -10,7 +10,8 @@ Non è necessario provvedere alla validazione delle email
 */
 
 // Viene creato un array contenente gli indirizzi e-mail che si vogliono controllare
-const mailAddress = [
+
+/*const mailAddress = [
     "pippo@gmail.com",
     "pluto@gmail.com",
     "topolino@gmail.com",
@@ -39,10 +40,33 @@ if(welcome) {
     // altrimenti viene stamapato in console un messaggio di 'errore' 
 } else {
     console.log("La mail inserita non è corretta.")
-    }
+    } */
 
 
 /* Gioco dei dadi
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 Stabilire il vincitore, in base a chi fa il punteggio più alto.
 */
+
+// Si crea una funzione che genera un numero randomico tra un min e un max
+// deciso all'invocazione della funzione, per permetterne un (ri-)utilizzo più ampio.
+// I numeri della giocata di un dado saranno sempre da 1 a 6 (incluso).
+
+function getRandInt(min, max) {
+    min = Math.ceil(min);   // arrotonda per eccesso l'intero casuale (es. 0,95 --> 1)
+    max = Math.floor(max);  // arrotonda per difetto l'intero causale (es. 1.95 --> 1)
+    
+    // il '+ 1' aggiunto alla sottrazione di min a max permette di avere dei risultati che
+    //  possono superare il massimo indicato senza superare il punto dell'intero successivo 
+    //  e quindi risultare, approssimati per difetto, anche nel valore stesso del valore massimo.    
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}  
+
+// Si creano le due variabili delle giocate random, la prima del giocatore e la seconda 
+// della CPU.
+
+const humanDieCast = getRandInt(1, 6);
+console.log(humanDieCast);
+
+const computerDiecast = getRandInt(1, 6);
+console.log(computerDiecast);
