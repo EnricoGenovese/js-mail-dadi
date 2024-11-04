@@ -22,8 +22,8 @@ while(result <= maxValue) { // il ciclo itera fino a che la condizione riusulta 
     i++;                               // per ogni loop 'i' aumenta di +1
     //                                 
     if(result >= maxValue) {           // quando il risultato raggiunge o eccede 'max value'
-        result -= (result - maxValue); // toglie l'eccesso alla potenza di 2^10 e restituisce 1000
-    }
+        result.pop();                  // l'elemento viene eliminato dall'array prima di uscire
+    }                                  // dal ciclo
     //
     console.log(result);
 }
