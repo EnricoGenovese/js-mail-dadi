@@ -8,3 +8,8 @@ console.clear();
 // Dato un numero n inserito dall'utente, un ciclo 'for' con interazioni massimo uguali (<=) al
 // valore dell'intero indicato dall'utente, ed elevato al cubo per ogni iterazione, potrebbe risolvere
 // la consegna.
+
+
+// Variabile per l'input dellì'utente; il valore verrà usato come numero di iterazioni massime.
+const userInput = prompt("Inserisci un numero");
+
