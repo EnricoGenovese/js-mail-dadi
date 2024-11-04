@@ -56,8 +56,8 @@ function getRandInt(min, max) {
     min = Math.ceil(min);   // arrotonda per eccesso l'intero casuale (es. 0,95 --> 1)
     max = Math.floor(max);  // arrotonda per difetto l'intero causale (es. 1.95 --> 1)
     
-    // il '+ 1' aggiunto alla sottrazione di min a max permette di avere dei risultati che
-    //  possono superare il massimo indicato senza superare il punto dell'intero successivo 
+    // Il '+ 1' aggiunto alla sottrazione di min a max permette di avere dei risultati che
+    //  possono superare il massimo indicato senza superare il punto dell'intero successivo (massimo 5,999...)
     //  e quindi risultare, approssimati per difetto, anche nel valore stesso del valore massimo.    
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }  
@@ -70,3 +70,17 @@ console.log(humanDieCast);
 
 const computerDiecast = getRandInt(1, 6);
 console.log(computerDiecast);
+
+
+// Una serie di condizioni che determinano un vincitore. "Math.floor" + "Math.random()" produce un intero:
+// non è necessario cambiare nessun tipo di dato a stringa a 'numero'
+if(humanDieCast > computerDiecast) {
+    console.log("Vince il giocatore umano!");   // normale comparazione di due interi, scegli il maggiore
+} else if (humanDieCast < computerDiecast) {    
+    console.log("Vince il Computer!");          // come sopra, invertendo il senso della comparazione
+} else {
+    console.log("Pareggio.");   // in caso pareggio, il messaggio che prende in considerazione l'opzione
+}                               // viene stampato a terminale. 
+
+// "Alea iacta est"
+console.log("Premi F5 per giocare ancora.");
