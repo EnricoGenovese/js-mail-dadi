@@ -12,10 +12,21 @@ Immagino che 1000 sia il valore massimo che il risultato della potenza debba rag
 // Un 'while loop' potrebbe servire ad interrompere il codice una volta raggiunto il valore desiderato.
 // La condizione del ciclo sarebbe: risultato <= 1000.
 
+// imposto le variabili che serviranno nel ciclo
 const maxValue = 1000;  // valore oltre il quale il ciclo non itera più
 let result = 0;         // la variabile di immagazzinamento dell'operazione nel loop
 let i = 1;              // il valore dell'elevatore a potenza di 2
 
+while(result <= maxValue) { // il ciclo itera fino a che la condizione riusulta vera
+    result = 2**i;
+    i++;                               // per ogni loop 'i' aumenta di +1
+    //                                 
+    if(result >= maxValue) {           // quando il risultato raggiunge o eccede 'max value'
+        result -= (result - maxValue); // toglie l'eccesso alla potenza di 2^10 e restituisce 1000
+    }
+    //
+    console.log(result);
+}
 
 
 
