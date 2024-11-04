@@ -13,3 +13,10 @@ console.clear();
 // Variabile per l'input dellì'utente; il valore verrà usato come numero di iterazioni massime.
 const userInput = prompt("Inserisci un numero");
 
+// nel ciclo 'for' il numero di iterazioni non deve superare il valore N di userInput.
+for(let i = 0; i <= parseInt(userInput); i++) { // usiamo 'i' come base del cubo; 'i' itera fino a userInput
+    if(!isNaN(userInput)) {
+    let cube = Math.pow(i, 3); // al posto di usare: cube = i**3
+    console.log(`${i}^3 = ${cube}`); // stampiamo anche l'operazione oltre che il risultato 
+    } 
+}
